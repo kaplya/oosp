@@ -31,6 +31,9 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 
 gem 'haml'
+
+gem 'haml-rails'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
