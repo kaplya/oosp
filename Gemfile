@@ -29,6 +29,8 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'bootstrap-sass'
 
 gem 'simple_form'
+
+gem 'haml'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
