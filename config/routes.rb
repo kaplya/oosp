@@ -1,7 +1,4 @@
 Oospey::Application.routes.draw do
-  resources :contacts
-
-
   get "sessions/new"
 
   get "users/new"

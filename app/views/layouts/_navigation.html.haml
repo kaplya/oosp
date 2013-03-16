@@ -1,13 +1,14 @@
 .navbar.navbar-inverse.navbar-fixed-top
   .navbar-inner
     .container
-      = link_to "Home", root_path, :class => 'brand'
+      = link_to "Oospey", root_path, :class => 'brand'
       %ul.nav
         - if current_user
-          %li Signed in as = current_user.email
-          %li= link_to 'Sign out', sign_out_path, method: :delete
+          %li= link_to current_user.email, current_user
+          %li= link_to 'Sign out', sign_out_path
         - else
-          %li= link_to 'Sign in', sign_in_path
+          %li= link_to 'Learn more', sign_in_path
           %li= link_to 'Sign up', sign_up_path
+          %li= link_to 'Sign in', sign_in_path
 
 
