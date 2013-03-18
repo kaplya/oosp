@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @stuff.user_id
+%p
+  %b Name:
+  = @stuff.name
+%p
+  %b Description:
+  = @stuff.description
+
+= link_to 'Edit', edit_stuff_path(@stuff)
+\|
+= link_to 'Back', stuff_index_path
