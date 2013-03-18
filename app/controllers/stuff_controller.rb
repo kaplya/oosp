@@ -2,7 +2,7 @@ class StuffController < ApplicationController
   # GET /stuff
   # GET /stuff.json
   def index
-    @stuff = Stuff.all
+    @stuff = current_user.stuff #Stuff.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class StuffController < ApplicationController
   # GET /stuff/new
   # GET /stuff/new.json
   def new
-    @stuff = Stuff.new
+    @stuff = current_user.stuff.build #Stuff.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +40,11 @@ class StuffController < ApplicationController
   # POST /stuff
   # POST /stuff.json
   def create
-    @stuff = Stuff.new(params[:stuff])
+    @stuff = current_user.stuff.build(params[:stuff])
 
     respond_to do |format|
       if @stuff.save
-        format.html { redirect_to @stuff, notice: 'Stuff was successfully created.' }
+        format.html { redirect_to '/stuff', notice: 'Stuff was successfully created.' }
         format.json { render json: @stuff, status: :created, location: @stuff }
       else
         format.html { render action: "new" }
