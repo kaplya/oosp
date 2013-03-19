@@ -1,12 +1,14 @@
 %h1 Incoming stuff
-
+.alert
+  %button{type: "button", :class => "close", "data-dismiss" => "alert"} &times
+  %strong Warning! 
+  Best check yo self, you're not looking too good.
 .span4
   %button.btn.btn-primary{onclick: "location.href = '/stuff/new'"} NEW
-  
-  / = link_to '+', new_stuff_path
+%br
 - @stuff.each do |stuff|
   .well.span6
     = link_to stuff.description, edit_stuff_path(stuff)
-    = link_to '×', stuff, :method => :delete
+    = link_to "×", stuff, :method => :delete, :type=> "button", :class => "close", "data-dismiss" => "alert"
 
 
