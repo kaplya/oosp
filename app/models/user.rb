@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   has_many :stuff
+  has_many :actions
   
   attr_accessor :password
   before_save :encrypt_password

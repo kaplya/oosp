@@ -1,5 +1,8 @@
 Oospey::Application.routes.draw do
 
+  resources :actions
+
+
   resources :stuff
 
 
@@ -12,6 +15,7 @@ Oospey::Application.routes.draw do
   get "sign_out" => "sessions#destroy", :as => "sign_out"
   get "sign_in" => "sessions#new", :as => "sign_in"
   get "sign_up" => "users#new", :as => "sign_up"
+  get "next" => "actions#index", :as => "next"
   get "overview" => "pages#overview", :as => "overview"
   root :to => "pages#index"
   resources :users

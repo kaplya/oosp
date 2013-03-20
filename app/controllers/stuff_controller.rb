@@ -60,8 +60,19 @@ class StuffController < ApplicationController
 
     respond_to do |format|
       if @stuff.update_attributes(params[:stuff])
-        format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
-        format.json { head :no_content }
+        if params[:commit] == "Save"
+          format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
+          format.json { head :no_content }
+        elsif params[:commit] == "To Project"
+          format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
+          format.json { head :no_content }
+        elsif params[:commit] == "Next Action"
+          action = @stuff.make_action current_user
+          @stuff.destroy
+
+          format.html { redirect_to '/stuff', notice: 'Action was successfully created.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @stuff.errors, status: :unprocessable_entity }

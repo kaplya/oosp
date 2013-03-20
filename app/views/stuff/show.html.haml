@@ -1,15 +1,15 @@
-%p#notice= notice
+= form_for @stuff do |f|
+  - if @stuff.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@stuff.errors.count, "error")} prohibited this stuff from being saved:"
+      %ul
+        - @stuff.errors.full_messages.each do |msg|
+          %li= msg
 
-%p
-  %b User:
-  = @stuff.user_id
-%p
-  %b Name:
-  = @stuff.name
-%p
-  %b Description:
-  = @stuff.description
+  .field
+    = f.text_area :description, rows: 5
+  .actions
+    = f.submit 'Save', :class => 'btn btn-success'
+    = f.submit 'To Project', :class => 'btn btn-primary'
+    = f.submit 'Next Action', :class => 'btn btn-info'
 
-= link_to 'Edit', edit_stuff_path(@stuff)
-\|
-= link_to 'Back', stuff_index_path
