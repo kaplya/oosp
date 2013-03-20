@@ -1,0 +1,5 @@
+
+- @actions.each do |action|
+  .well.span6
+    = link_to action.description, edit_action_path(action)
+    = link_to "×", action, :method => :delete, :type=> "button", :class => "close"

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @action.description
+%p
+  %b Scheduled for:
+  = @action.scheduled_for
+%p
+  %b Assigned to:
+  = @action.assigned_to
+%p
+  %b User:
+  = @action.user_id
+%p
+  %b Project:
+  = @action.project_id
+%p
+  %b Area:
+  = @action.area_id
+
+= link_to 'Edit', edit_action_path(@action)
+\|
+= link_to 'Back', actions_path
