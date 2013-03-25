@@ -2,20 +2,29 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
-.btn {
-  margin-bottom: 5px;
+button.btn {
+  margin-bottom: 10px;
 }
 
-textarea {
-  resize: none;
-}
-
-.nav-list > li > a:visited {
-  color: #000;
-}
-
-.nav-list > li > a:hover,
-.nav-list > li > a:focus {
+.oo-well > a {
   text-decoration: none;
-  background-color: #ccc;
+}
+
+td.oo-calendar-day  {
+  height: 50px;
+  width: 90px;
+  text-align: center;
+  font-size: 20px;
+}
+
+td.oo-week-day-0, td.oo-week-day-6 {
+  font-weight: bold;
+}
+
+td.oo-day-today {
+  background-color: #ddd;
+}
+
+td.oo-another-month {
+  background-color: #fff;
 }

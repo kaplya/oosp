@@ -13,10 +13,9 @@
   %body
     = render 'layouts/navigation'
     #main{:role => "main"}
-      .container
-        .span12
-          = render 'layouts/messages'
-          = render 'layouts/side_navigation'
-          .span8
-            = yield
+      .container.span12      
+        = render 'layouts/messages'
+        = render 'layouts/side_navigation'
+        .span8
+          = yield
         %footer

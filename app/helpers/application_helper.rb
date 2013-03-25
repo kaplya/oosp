@@ -10,4 +10,12 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
+
+  def nav_link_current? nav_link_path
+    if nav_link_path == request.fullpath
+      return true
+    else
+      return false
+    end
+  end
 end

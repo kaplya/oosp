@@ -1,0 +1,7 @@
+.span4
+  %h3 Next actions
+
+- @next_actions.each do |action|
+  .well.span6
+    = link_to action.description, action_path(action)
+    = link_to "×", action, :method => :delete, :type=> "button", :class => "close"

@@ -1,0 +1,9 @@
+.oo-calendar
+  %h3= Date.current.strftime("%B, %Y")
+  %table
+    %tbody
+      - @calendar.each do |seven_days|
+        %tr.oo-calendar-week
+          - seven_days.each do |day|
+            %td.well.oo-calendar-day{:class => "oo-week-day-#{day.wday} #{day == @today ? 'oo-day-today' : ''} #{@this_month.include?(day) ? '' : 'oo-another-month'}"}
+              %a= day.to_formatted_s :short

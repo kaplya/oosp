@@ -5,7 +5,7 @@
   %button.btn.btn-primary.btn-large{onclick: "location.href = '/stuff/new'"} NEW
 %br
 - @stuff.each do |stuff|
-  .well.span6
+  .well.span6.oo-well
     = link_to stuff.description, stuff
     = link_to "×", stuff, :method => :delete, :type=> "button", :class => "close"
 

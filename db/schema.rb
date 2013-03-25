@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130322184133) do
 
-  create_table "actions", :force => true do |t|
+  create_table "next_actions", :force => true do |t|
     t.text     "description"
     t.datetime "scheduled_for"
     t.integer  "assigned_to"

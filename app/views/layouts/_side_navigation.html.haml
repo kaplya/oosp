@@ -1,25 +1,24 @@
 - if current_user
-  .span3
-    .well.sidebar-nav-inverse
-      %ul.nav.nav-list
-        %li.nav-header Collect
-        %li
-          %a{href: "/stuff"} Stuff
-        %li.nav-header Focus
-        %li
-          %a{href: "/next"} Next
-        %li
-          %a{href: "/scheduled"} Scheduled
-        %li
-          %a{href: "/deligated"} Deligated
-        %li.nav-header Organize
-        %li
-          %a{href: "/projects"} Projects
-        %li
-          %a{href: "/archive"} Archive
-        %li
-          %a{href: "/areas"} Areas
-        %li.nav-header Contact
-        %li
-          %a{href: "/people"} People
+  .well.sidebar-nav-inverse.span2
+    %ul.nav.nav-list
+      %li.nav-header Collect
+      %li{:class => "#{nav_link_current?('/stuff') ? 'active' : ''}"}
+        %a{href: "/stuff"} Stuff
+      %li.nav-header Focus
+      %li{:class => "#{nav_link_current?('/next') ? 'active' : ''}"}
+        %a{href: "/next"} Next
+      %li{:class => "#{nav_link_current?('/scheduled') ? 'active' : ''}"}
+        %a{href: "/scheduled"} Scheduled
+      %li{:class => "#{nav_link_current?('/deligated') ? 'active' : ''}"}
+        %a{href: ""} Deligated
+      %li.nav-header Organize
+      %li{:class => "#{nav_link_current?('/projects') ? 'active' : ''}"}
+        %a{href: "/projects"} Projects
+      %li
+        %a{href: ""} Archive
+      %li
+        %a{href: ""} Areas
+      %li.nav-header Contact
+      %li
+        %a{href: ""} People
         

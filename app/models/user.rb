@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   has_many :stuff
-  has_many :actions
+  has_many :next_actions
   has_many :projects
   
   attr_accessor :password
