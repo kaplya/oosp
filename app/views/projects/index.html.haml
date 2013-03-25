@@ -1,0 +1,8 @@
+.span4
+  %h3 Projects
+
+- @projects.each do |project|
+  .well.span6
+    = link_to project.name, project_path(project)
+    = link_to "×", project, :method => :delete, :type=> "button", :class => "close"
+

@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: appname_development
+  database: oospey_development
   pool: 5
   timeout: 5000
   username: timur
@@ -18,7 +18,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: appname_development
+  database: oospey_development
   pool: 5
   timeout: 5000
   username: timur
@@ -27,7 +27,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: appname_test
+  database: oospey_test
   pool: 5
   timeout: 5000
   username: timur

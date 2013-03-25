@@ -1,9 +1,20 @@
 Oospey::Application.routes.draw do
 
+  resources :projects do
+    resources :actions
+  end
+
+
   resources :actions
 
 
   resources :stuff
+
+
+  resources :users
+
+
+  resources :sessions
 
 
   get "pages/index"
@@ -18,8 +29,7 @@ Oospey::Application.routes.draw do
   get "next" => "actions#index", :as => "next"
   get "overview" => "pages#overview", :as => "overview"
   root :to => "pages#index"
-  resources :users
-  resources :sessions
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

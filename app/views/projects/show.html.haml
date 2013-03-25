@@ -1,0 +1,27 @@
+.span6
+  %h3= @project.name
+
+= form_for @project do |f|
+  - if @project.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+
+- @actions.each do |a|
+  .well.span6
+    = link_to a.description, a
+    = link_to "×", a, :method => :delete, :type=> "button", :class => "close"
+
+.span6
+  = form_for @action, :url => project_actions_path(@project) do |f|
+
+    .field
+      = f.text_area :description, name: "act[description]", rows: 5 
+
+    .actions
+      = f.submit 'Add', :class => 'btn btn-success'
+
+
+

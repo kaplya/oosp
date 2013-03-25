@@ -6,4 +6,10 @@ class Stuff < ActiveRecord::Base
     action.save
     action
   end
+
+  def make_project (current_user)
+    project = current_user.projects.build(name: description)
+    project.save
+    project
+  end
 end

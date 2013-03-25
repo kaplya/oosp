@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :stuff
   has_many :actions
+  has_many :projects
   
   attr_accessor :password
   before_save :encrypt_password

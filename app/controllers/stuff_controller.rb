@@ -61,16 +61,19 @@ class StuffController < ApplicationController
     respond_to do |format|
       if @stuff.update_attributes(params[:stuff])
         if params[:commit] == "Save"
-          format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
+          format.html { redirect_to @stuff }
           format.json { head :no_content }
         elsif params[:commit] == "To Project"
-          format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
+          project = @stuff.make_project current_user
+          @stuff.destroy
+
+          format.html { redirect_to @stuff, notice: "Added new project: #{project.name}" }
           format.json { head :no_content }
         elsif params[:commit] == "Next Action"
           action = @stuff.make_action current_user
           @stuff.destroy
 
-          format.html { redirect_to '/stuff', notice: 'Action was successfully created.' }
+          format.html { redirect_to @stuff, notice: "Added new next action: #{action.description}" }
           format.json { head :no_content }
         end
       else

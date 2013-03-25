@@ -40,15 +40,33 @@ class ActionsController < ApplicationController
   # POST /actions
   # POST /actions.json
   def create
-    @action = current_user.actions.build(params[:act])
+    
+    if params[:project_id]
+      project = Project.find(params[:project_id])
+      @action = current_user.actions.build(params[:act])
+      @action.project_id = project.id
+      
+      respond_to do |format|
+        if @action.save
+          format.html { redirect_to project, notice: 'Action was successfully created.' }
+          format.json { render json: @action, status: :created, location: @action }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @action.errors, status: :unprocessable_entity }
+        end
+      end
 
-    respond_to do |format|
-      if @action.save
-        format.html { redirect_to @action, notice: 'Action was successfully created.' }
-        format.json { render json: @action, status: :created, location: @action }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @action.errors, status: :unprocessable_entity }
+    else
+      @action = current_useractions.build(params[:act])
+
+      respond_to do |format|
+        if @action.save
+          format.html { redirect_to @action, notice: 'Action was successfully created.' }
+          format.json { render json: @action, status: :created, location: @action }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @action.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -1,24 +1,13 @@
-%p#notice= notice
+= form_for @action do |f|
+  - if @action.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@action.errors.count, "error")} prohibited this action from being saved:"
+      %ul
+        - @action.errors.full_messages.each do |msg|
+          %li= msg
 
-%p
-  %b Description:
-  = @action.description
-%p
-  %b Scheduled for:
-  = @action.scheduled_for
-%p
-  %b Assigned to:
-  = @action.assigned_to
-%p
-  %b User:
-  = @action.user_id
-%p
-  %b Project:
-  = @action.project_id
-%p
-  %b Area:
-  = @action.area_id
+  .field
+    = f.text_area :description, name: "act[description]", rows: 5 
 
-= link_to 'Edit', edit_action_path(@action)
-\|
-= link_to 'Back', actions_path
+  .actions
+    = f.submit 'Save', :class => 'btn btn-success'
