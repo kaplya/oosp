@@ -2,6 +2,10 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
+.navbar .nav {
+  float: right;
+}
+
 button.btn {
   margin-bottom: 10px;
 }
@@ -28,3 +32,4 @@ td.oo-day-today {
 td.oo-another-month {
   background-color: #fff;
 }
+

@@ -1,24 +1,24 @@
 - if current_user
   .well.sidebar-nav-inverse.span2
     %ul.nav.nav-list
-      %li.nav-header Collect
-      %li{:class => "#{nav_link_current?('/stuff') ? 'active' : ''}"}
+      %li.nav-item.nav-header Collect
+      %li.nav-item{:class => "#{nav_link_current?('/stuff') ? 'active' : ''}"}
         %a{href: "/stuff"} Stuff
-      %li.nav-header Focus
-      %li{:class => "#{nav_link_current?('/next') ? 'active' : ''}"}
+      %li.nav-item.nav-header Focus
+      %li.nav-item{:class => "#{nav_link_current?('/next') ? 'active' : ''}"}
         %a{href: "/next"} Next
-      %li{:class => "#{nav_link_current?('/scheduled') ? 'active' : ''}"}
+      %li.nav-item{:class => "#{nav_link_current?('/scheduled') ? 'active' : ''}"}
         %a{href: "/scheduled"} Scheduled
-      %li{:class => "#{nav_link_current?('/deligated') ? 'active' : ''}"}
+      %li.nav-item{:class => "#{nav_link_current?('/deligated') ? 'active' : ''}"}
         %a{href: ""} Deligated
-      %li.nav-header Organize
-      %li{:class => "#{nav_link_current?('/projects') ? 'active' : ''}"}
+      %li.nav-item.nav-header Organize
+      %li.nav-item{:class => "#{nav_link_current?('/projects') ? 'active' : ''}"}
         %a{href: "/projects"} Projects
-      %li
+      %li.nav-item
         %a{href: ""} Archive
-      %li
+      %li.nav-item
         %a{href: ""} Areas
-      %li.nav-header Contact
-      %li
+      %li.nav-item.nav-header Contact
+      %li.nav-item
         %a{href: ""} People
         

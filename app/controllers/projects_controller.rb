@@ -14,8 +14,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-    @actions = @project.actions
-    @action = Action.new(:user_id => current_user.id, :project_id => @project.id)
+    @actions = @project.next_actions
+    @action = NextAction.new(:user_id => current_user.id, :project_id => @project.id)
 
     respond_to do |format|
       format.html # show.html.erb
