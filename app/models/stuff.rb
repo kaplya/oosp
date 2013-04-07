@@ -1,8 +1,9 @@
 class Stuff < ActiveRecord::Base
   attr_accessible :description, :name, :user_id
+  belongs_to :user
 
   def make_action (current_user)
-    action = current_user.actions.build(description: description)
+    action = current_user.next_actions.build(description: description)
     action.save
     action
   end

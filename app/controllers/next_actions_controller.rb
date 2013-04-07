@@ -13,7 +13,7 @@ class NextActionsController < ApplicationController
   # GET /next_actions/1
   # GET /next_actions/1.json
   def show
-    @next_action = Action.find(params[:id])
+    @next_action = NextAction.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

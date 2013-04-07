@@ -2,7 +2,7 @@ Oospey::Application.routes.draw do
 
 
   resources :projects do
-    resources :actions
+    resources :next_actions
   end
   
 
