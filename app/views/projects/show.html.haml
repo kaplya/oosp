@@ -15,7 +15,7 @@
     = link_to "×", a, :method => :delete, :type=> "button", :class => "close"
 
 .span6
-  = form_for @action, :url => project_actions_path(@project) do |f|
+  = form_for @action, :url => project_next_actions_path(@project) do |f|
 
     .field
       = f.text_area :description, name: "act[description]", rows: 5 

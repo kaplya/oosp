@@ -3,8 +3,8 @@
 
 - @projects.each do |project|
   .well.span6
-    = link_to project.name, project_path(project)    
+    = link_to project.name, project_path(project)
+    = link_to "×", project, :method => :delete, :type=> "button", :class => "close"    
     - if project.next_actions.any?
-      %span.label.label-info.oo-project-label= project.next_actions.count
-    = link_to "×", project, :method => :delete, :type=> "button", :class => "close"
+      = link_to project.next_actions.count, project_path(project), :class => "label label-info oo-project-label"
 

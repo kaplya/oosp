@@ -33,7 +33,9 @@ td.oo-another-month {
   background-color: #fff;
 }
 .oo-project-label {
-  left: 100px;
+  float: right;
+  right: 10px;
+  position: relative;
 }
 
 .close {

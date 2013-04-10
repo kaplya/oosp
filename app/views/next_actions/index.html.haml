@@ -4,6 +4,6 @@
 - @next_actions.each do |action|
   .well.span6
     = link_to action.description, next_action_path(action)
+    = link_to "×", action, :method => :delete, :type=> "button", :class => "close"    
     - if action.project
-      %span.label.label-info.oo-project-label= action.project.name
-    = link_to "×", action, :method => :delete, :type=> "button", :class => "close"
+      = link_to action.project.name, project_path(action.project), :class => "label label-info oo-project-label"
